@@ -1,0 +1,22 @@
+{
+  "name": "rh2-media-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RH2 Media marketing website — static HTML + Tailwind CSS v4",
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-partials.mjs",
+    "css:watch": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
+    "css:build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "serve": "node scripts/serve.mjs",
+    "dev": "npm run sync && node scripts/dev.mjs",
+    "build": "npm run css:build && npm run sync && npm run sitemap",
+    "icons": "node scripts/gen-icons.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "sitemap": "node scripts/sitemap.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

@@ -1,0 +1,84 @@
+<!--
+  RH2 Media — admin notification email (EmailJS template)
+  ------------------------------------------------------------------
+  Paste this whole file into: EmailJS → Email Templates → (your template) → Content → "Edit content" → Code editor.
+  Template settings to fill in the EmailJS dashboard:
+    Subject:     New enquiry: {{name}} — {{service}}
+    To Email:    hello@rh2media.in            (your admin inbox; comma-separate for several)
+    From Name:   RH2 Media Website
+    Reply To:    {{reply_to}}                 (so "Reply" goes straight to the customer)
+  The {{placeholders}} are filled by /js/main.js (see the `params` object in initForms).
+-->
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only"><title>New enquiry</title></head>
+<body style="margin:0;padding:0;background:#EFEBE3;">
+<span style="display:none!important;opacity:0;color:transparent;height:0;width:0;overflow:hidden;">New enquiry from {{name}} — {{service}}</span>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EFEBE3;padding:24px 12px;">
+<tr><td align="center">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#FDFAF3;border-radius:16px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;color:#1A1F25;">
+
+  <!-- Header -->
+  <tr><td style="background:#0A0A0A;padding:28px 32px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+      <td style="font-family:Montserrat,Arial,sans-serif;font-size:26px;font-weight:800;letter-spacing:-0.5px;color:#F8F8F8;">RH<span style="color:#EDA326;">2</span> <span style="font-size:11px;font-weight:600;letter-spacing:4px;color:#CFB57C;vertical-align:middle;">MEDIA</span></td>
+      <td align="right" style="font-size:22px;color:#EDA326;font-weight:700;">&#8599;</td>
+    </tr></table>
+  </td></tr>
+  <tr><td style="height:4px;background:#EDA326;background-image:linear-gradient(135deg,#FBBD1A 0%,#EDA326 55%,#DA8119 100%);font-size:0;line-height:0;">&nbsp;</td></tr>
+
+  <!-- Title -->
+  <tr><td style="padding:32px 32px 8px;">
+    <p style="margin:0;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#8A5A0E;">New website enquiry</p>
+    <h1 style="margin:10px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:24px;line-height:30px;font-weight:800;color:#1A1F25;">{{name}} is interested in {{service}}</h1>
+    <p style="margin:8px 0 0;font-size:13px;color:#4A525C;">Received {{submitted_at}} via <strong>{{form_name}}</strong></p>
+  </td></tr>
+
+  <!-- Details -->
+  <tr><td style="padding:16px 32px 8px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FFFFFF;border:1px solid #E7E1D4;border-radius:12px;padding:4px 20px;">
+      <tr>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;width:120px;vertical-align:top;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8A5A0E;">Name</td>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;font-size:15px;line-height:22px;color:#1A1F25;">{{name}}</td>
+      </tr>
+      <tr>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;vertical-align:top;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8A5A0E;">Email</td>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;font-size:15px;line-height:22px;"><a href="mailto:{{email}}" style="color:#8A5A0E;">{{email}}</a></td>
+      </tr>
+      <tr>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;vertical-align:top;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8A5A0E;">Phone</td>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;font-size:15px;line-height:22px;"><a href="{{phone_link}}" style="color:#8A5A0E;">{{phone}}</a></td>
+      </tr>
+      <tr>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;vertical-align:top;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8A5A0E;">Service</td>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;font-size:15px;line-height:22px;color:#1A1F25;">{{service}}</td>
+      </tr>
+      <tr>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;vertical-align:top;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8A5A0E;">Budget</td>
+        <td style="padding:12px 0;border-bottom:1px solid #E7E1D4;font-size:15px;line-height:22px;color:#1A1F25;">{{budget}}</td>
+      </tr>
+      <tr>
+        <td style="padding:12px 0;vertical-align:top;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#8A5A0E;">Message</td>
+        <td style="padding:12px 0;font-size:15px;line-height:22px;color:#1A1F25;white-space:pre-line;">{{message}}</td>
+      </tr>
+    </table>
+  </td></tr>
+
+  <!-- Actions -->
+  <tr><td style="padding:16px 32px 28px;">
+    <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+      <td style="padding:0 8px 8px 0;"><a href="{{phone_link}}" style="display:inline-block;background:#EDA326;color:#0A0A0A;font-weight:700;font-size:14px;text-decoration:none;padding:12px 20px;border-radius:999px;">Call now</a></td>
+      <td style="padding:0 8px 8px 0;"><a href="{{whatsapp_link}}" style="display:inline-block;background:#0A0A0A;color:#F8F8F8;font-weight:700;font-size:14px;text-decoration:none;padding:12px 20px;border-radius:999px;">WhatsApp</a></td>
+      <td style="padding:0 0 8px 0;"><a href="mailto:{{email}}" style="display:inline-block;border:2px solid #1A1F25;color:#1A1F25;font-weight:700;font-size:14px;text-decoration:none;padding:10px 18px;border-radius:999px;">Reply by email</a></td>
+    </tr></table>
+    <p style="margin:16px 0 0;font-size:12px;line-height:18px;color:#4A525C;">Submitted from: {{page_url}}</p>
+  </td></tr>
+
+  <!-- Footer -->
+  <tr><td style="background:#0A0A0A;padding:20px 32px;font-size:12px;line-height:18px;color:#A3A3A3;">
+    <strong style="color:#F8F8F8;">RH2 Media</strong> &middot; Turning <span style="color:#F2AF20;">Attention</span> Into Growth.<br>Gurugram, Haryana, India
+  </td></tr>
+</table>
+</td></tr></table>
+</body>
+</html>

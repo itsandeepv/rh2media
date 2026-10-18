@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /partials/
+Disallow: /src/
+Disallow: /scripts/
+Disallow: /emailjs/
+
+# EDIT: update the domain if it changes
+Sitemap: https://www.rh2media.in/sitemap.xml
