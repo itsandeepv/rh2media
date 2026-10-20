@@ -12,9 +12,11 @@
    Update both places, or run a find-and-replace across the project.
    ========================================================================== */
 const CONFIG = {
-  phoneDisplay: '+91-XXXXXXXXXX',          // shown on screen
-  phoneTel: '+91XXXXXXXXXX',               // used in tel: links (no spaces/dashes)
-  whatsapp: '91XXXXXXXXXX',                // country code + number, digits only
+  phoneDisplay: '+91 88825 80503',         // primary number, shown on screen
+  phoneTel: '+918882580503',               // primary number, used in tel: links (no spaces/dashes)
+  phone2Display: '+91 93112 61955',        // secondary number, shown on screen
+  phone2Tel: '+919311261955',             // secondary number, used in tel: links
+  whatsapp: '918882580503',               // WhatsApp (primary): country code + number, digits only
   whatsappMessage: "Hi RH2 Media, I'd like a free consultation.",
   email: 'hello@rh2media.in',
   address: 'Gurugram, Haryana, India',
@@ -55,14 +57,14 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 /* ---------- Apply CONFIG ---------- */
 function applyConfig() {
-  const text = { phone: CONFIG.phoneDisplay, email: CONFIG.email, address: CONFIG.address };
+  const text = { phone: CONFIG.phoneDisplay, phone2: CONFIG.phone2Display, email: CONFIG.email, address: CONFIG.address };
   // Only touch the DOM when a value actually differs (avoids needless style/layout work)
   $$('[data-config]').forEach((el) => {
     const v = text[el.dataset.config];
     if (v && el.textContent !== v) el.textContent = v;
   });
   const wa = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`;
-  const hrefs = { tel: `tel:${CONFIG.phoneTel}`, mailto: `mailto:${CONFIG.email}`, whatsapp: wa, ...CONFIG.social };
+  const hrefs = { tel: `tel:${CONFIG.phoneTel}`, tel2: `tel:${CONFIG.phone2Tel}`, mailto: `mailto:${CONFIG.email}`, whatsapp: wa, ...CONFIG.social };
   $$('[data-config-href]').forEach((el) => {
     const v = hrefs[el.dataset.configHref];
     if (v && el.getAttribute('href') !== v) el.setAttribute('href', v);
