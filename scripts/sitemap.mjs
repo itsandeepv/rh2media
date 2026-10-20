@@ -1,7 +1,7 @@
 // Generates /sitemap.xml from every page in the project (except 404). Zero dependencies.
 // Run: npm run sitemap  (also runs in `npm run build`)
 // EDIT: set your live domain here (no trailing slash).
-const SITE_URL = 'https://www.rh2media.in';
+const SITE_URL = 'https://www.rh2media.com';
 
 import { readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';

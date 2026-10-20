@@ -351,7 +351,7 @@
   .nav-link.is-active { @apply text-gold-400; }
 
   .dropdown-panel {
-    @apply invisible absolute left-1/2 top-full z-50 mt-2 w-[22rem] -translate-x-1/2 translate-y-2 rounded-2xl border border-ink-800 bg-ink-900 p-2 opacity-0 shadow-card transition duration-200;
+    @apply invisible absolute left-1/2 top-full z-50 mt-2 w-[44rem] -translate-x-1/2 translate-y-2 rounded-2xl border border-ink-800 bg-ink-900 p-2 opacity-0 shadow-card transition duration-200;
   }
   .dropdown.is-open .dropdown-panel {
     @apply visible translate-y-0 opacity-100;

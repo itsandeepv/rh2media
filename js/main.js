@@ -19,7 +19,7 @@ const CONFIG = {
   whatsapp: '918882580503',               // WhatsApp (primary): country code + number, digits only
   whatsappMessage: "Hi RH2 Media, I'd like a free consultation.",
   email: 'hello@rh2media.in',
-  address: 'Gurugram, Haryana, India',
+  address: 'Palam Colony, New Delhi - 110077',
   social: {
     instagram: 'https://www.instagram.com/',  // TODO: add your profile URLs
     facebook: 'https://www.facebook.com/',

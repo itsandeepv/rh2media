@@ -6,4 +6,4 @@ Disallow: /scripts/
 Disallow: /emailjs/
 
 # EDIT: update the domain if it changes
-Sitemap: https://www.rh2media.in/sitemap.xml
+Sitemap: https://www.rh2media.com/sitemap.xml
